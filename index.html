@@ -335,6 +335,7 @@
         box-shadow: none;
         max-width: 100%;
         width: 100%;
+        min-height: 22in;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
         /*
@@ -386,6 +387,8 @@
 
       .section-heading { margin-bottom: 12px; margin-top: 20px; }
       .section-heading:first-child { margin-top: 0; }
+
+      .print-break-before { break-before: page; margin-top: 28px; }
     }
 
     /* Responsive */
@@ -568,7 +571,7 @@
     <hr class="job-divider" />
 
     <!-- Encompass -->
-    <div class="job">
+    <div class="job print-break-before">
       <div class="job-header">
         <span class="job-title">Product Manager</span>
         <span class="job-dates">October 2020 – February 2022</span>
