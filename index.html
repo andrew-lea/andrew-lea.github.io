@@ -36,7 +36,7 @@
       width: 100%;
       max-width: 960px;
       display: grid;
-      grid-template-columns: 268px 1fr;
+      grid-template-columns: 240px 1fr;
       box-shadow: 0 8px 40px rgba(0,0,0,0.12);
       position: relative;
       overflow: hidden;
@@ -312,7 +312,7 @@
 
     /* Print */
     @media print {
-      @page { size: letter portrait; margin: 0.4in 0.45in; }
+      @page { size: letter portrait; margin: 0; }
 
       body {
         background: white;
@@ -324,12 +324,36 @@
         box-shadow: none;
         max-width: 100%;
         width: 100%;
-        /* preserve background colors when printing */
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
 
       .download-btn { display: none !important; }
+
+      /* Strip pill chip styling — plain comma-separated text */
+      .pill {
+        background: none;
+        color: var(--ink);
+        padding: 0;
+        border-radius: 0;
+        font-size: 0.74rem;
+      }
+      .pill:not(:last-child)::after { content: ','; }
+
+      /* ── Denser work experience for print only ── */
+      .main { padding-top: 32px; padding-bottom: 32px; }
+
+      .job           { margin-bottom: 14px; }
+      .job-location  { margin-bottom: 4px; }
+      .job-block     { margin-top: 6px; }
+      .job-summary   { margin-bottom: 4px; }
+      .job-divider   { margin: 10px 0; }
+
+      .job-bullets li          { margin-bottom: 2px; line-height: 1.45; }
+      .job-sub-bullets li      { margin-bottom: 1px; line-height: 1.45; }
+
+      .section-heading { margin-bottom: 12px; margin-top: 20px; }
+      .section-heading:first-child { margin-top: 0; }
     }
 
     /* Responsive */
@@ -459,11 +483,7 @@
 
       <div class="job-block">
         <ul class="job-bullets">
-          <li>Led the development and launch of Connect, a new B2B product that collects automotive behavioral data (website events, phone calls, CRM/DMS integrations) and scrapes national dealership websites to aggregate vehicle inventory and attributes.
-            <ul class="job-sub-bullets">
-              <li>These customers would add $2.172M ARR over the next 12 months, bringing the total to $3.64M</li>
-            </ul>
-          </li>
+          <li>Led the development and launch of Connect, a new B2B product that collects automotive behavioral data (website events, phone calls, CRM/DMS integrations) and scrapes national dealership websites to aggregate vehicle inventory and attributes — these customers added $2.172M ARR over the next 12 months, bringing the total to $3.64M.</li>
           <li>Drove the initial customer sale by defining solution scope, creating mockups, and securing commitment pre-build; Connect has since become the company's fastest-growing product segment.</li>
           <li>Managed complex data collection and integration projects across two engineering teams, including web tracking, CRM/DMS ingestion, and scalable web scraping infrastructure.</li>
           <li>Collaborated cross-functionally with other PMs and engineering teams to deliver a full-stack product portfolio, from small feature improvements to net-new product launches.</li>
