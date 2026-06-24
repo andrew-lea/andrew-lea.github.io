@@ -185,6 +185,12 @@
     /* ══════════════════════════════
        MAIN COLUMN
     ══════════════════════════════ */
+    .summary {
+      font-size: 0.77rem;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
     .main {
       padding: 44px 40px 48px 40px;
     }
@@ -312,7 +318,8 @@
 
     /* Print */
     @media print {
-      @page { size: letter portrait; margin: 0; }
+      /* Top/bottom breathing room; sidebar bleeds edge-to-edge left/right */
+      @page { size: letter portrait; margin: 0.25in 0; }
 
       body {
         background: white;
@@ -326,7 +333,17 @@
         width: 100%;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        /*
+          Paint the sidebar gray as a gradient on the container rather than on
+          the sidebar element — this ensures the gray column extends the full
+          height of the resume across both pages, even where the sidebar has
+          no content.
+        */
+        background: linear-gradient(to right, var(--sidebar-bg) 240px, var(--bg) 240px);
       }
+
+      /* Sidebar itself goes transparent; gradient above handles the color */
+      .sidebar { background: transparent; }
 
       .download-btn { display: none !important; }
 
@@ -391,7 +408,7 @@
   <!-- ═══════════════ SIDEBAR ═══════════════ -->
   <aside class="sidebar">
     <p class="name">Andrew Lea</p>
-    <p class="title-badge">Product Manager</p>
+    <p class="title-badge">Technical Product Manager</p>
 
     <ul class="contact-list">
       <li>
@@ -429,6 +446,9 @@
 
     <p class="skill-group-title">Tools</p>
     <div class="skill-pills">
+      <span class="pill">Snowflake</span>
+      <span class="pill">AI / LLMs</span>
+      <span class="pill">SQL</span>
       <span class="pill">Jira</span>
       <span class="pill">Figma</span>
       <span class="pill">Flutter</span>
@@ -436,9 +456,7 @@
       <span class="pill">Excel</span>
       <span class="pill">Aha</span>
       <span class="pill">Miro</span>
-      <span class="pill">SQL</span>
       <span class="pill">JS / HTML / CSS</span>
-      <span class="pill">Blockchain</span>
       <span class="pill">Google</span>
       <span class="pill">Firebase</span>
       <span class="pill">LucidChart</span>
@@ -470,6 +488,9 @@
   <!-- ═══════════════ MAIN ═══════════════ -->
   <main class="main">
 
+    <p class="section-heading">Summary</p>
+    <p class="summary">Ten years of B2B product work, with a hands-on approach to data platforms, API-first product design, and 0-to-1 launches that ship and drive revenue.</p>
+
     <p class="section-heading">Work Experience</p>
 
     <!-- Foureyes -->
@@ -483,13 +504,13 @@
 
       <div class="job-block">
         <ul class="job-bullets">
-          <li>Led the development and launch of Connect, a new B2B product that collects automotive behavioral data (website events, phone calls, CRM/DMS integrations) and scrapes national dealership websites to aggregate vehicle inventory and attributes — these customers added $2.172M ARR over the next 12 months, bringing the total to $3.64M.</li>
-          <li>Drove the initial customer sale by defining solution scope, creating mockups, and securing commitment pre-build; Connect has since become the company's fastest-growing product segment.</li>
-          <li>Managed complex data collection and integration projects across two engineering teams, including web tracking, CRM/DMS ingestion, and scalable web scraping infrastructure.</li>
-          <li>Collaborated cross-functionally with other PMs and engineering teams to deliver a full-stack product portfolio, from small feature improvements to net-new product launches.</li>
-          <li>Regularly met with C-level leadership to align on team direction, report progress, and surface technical blockers.</li>
-          <li>Conducted customer discovery with prospective partners to gather requirements and inform roadmap decisions.</li>
-          <li>Researched and evaluated new technologies to support product scalability and implementation efficiency.</li>
+          <li>Led Connect from 0 to 1: defined the value proposition, created initial designs, and secured the first customer pre-build; grew to 3,500 connected dealerships across 10 vendor accounts and ~20 dealer groups, adding $2.172M ARR over 12 months and bringing the total to $3.64M.</li>
+          <li>Owned the full automotive data collection platform: CRM ingestion across six major providers (CDK, VinSolutions, DriveCentric, DealerSocket, Tekion, Reynolds &amp; Reynolds), behavioral web tracking, call data, and DMS feeds, plus daily inventory collection from 20,000+ dealer sites via API, SFTP, webhooks, and Snowflake.</li>
+          <li>Collaborated cross-functionally with PMs and revenue teams to align on product strategy, prioritization, and customer problems, translating field feedback directly into roadmap decisions.</li>
+          <li>Managed enterprise product requests end to end, including a 75% reduction in report load times (20s to 5s) and implementing n8n automations to deliver scheduled reports and alerts to dealer and enterprise clients.</li>
+          <li>Built and maintained data quality monitoring across the platform, normalizing person and vehicle data ingested from six CRM providers and 20,000+ dealer websites into a single source of truth powering downstream client applications.</li>
+          <li>Worked closely with engineering on architectural decisions, data models, and QA across two teams; managed roadmap tradeoffs across a full product portfolio from incremental feature work to net-new launches, serving developer and ops customers rather than traditional end users.</li>
+          <li>Regularly aligned with C-level leadership on team direction and technical blockers; conducted customer discovery with prospective partners, evaluated emerging technologies, and adopted AI tooling early (Claude Code, GPT, Lovable.dev) to accelerate prototyping and decision-making.</li>
         </ul>
       </div>
     </div>
