@@ -1,367 +1,576 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Andrew Lea is a technical product manager in Portland, Oregon with experience launching B2B software and data products."
-    />
-    <meta name="author" content="Andrew Lea" />
-    <title>Andrew Lea – Technical Product Manager</title>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <article class="resume">
-      <aside class="sidebar">
-        <h1 class="name">Andrew Lea</h1>
-        <p class="title-badge">Technical Product Manager</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew Lea – Product Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        <ul class="contact-list">
-          <li>
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            <a href="mailto:alea91@gmail.com">alea91@gmail.com</a>
+    :root {
+      --teal:        #1A7B7B;
+      --teal-dark:   #0D5252;
+      --teal-light:  #e8f5f5;
+      --ink:         #1C1C2E;
+      --muted:       #6B7280;
+      --divider:     #d0e8e8;
+      --bg:          #ffffff;
+      --sidebar-bg:  #f7fafa;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #e5eded;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 16px;
+      color: var(--ink);
+    }
+
+    /* ── Card shell ── */
+    .resume {
+      background: var(--bg);
+      width: 100%;
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: 268px 1fr;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── Corner triangles ── */
+    .corner-accent {
+      position: absolute;
+      top: 0; left: 0;
+      width: 80px; height: 80px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════
+       SIDEBAR
+    ══════════════════════════════ */
+    .sidebar {
+      background: var(--sidebar-bg);
+      padding: 48px 28px 48px 32px;
+      border-right: 1px solid var(--divider);
+    }
+
+    .name {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 4px;
+      margin-top: 28px; /* clear triangle */
+    }
+
+    .title-badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .contact-list li svg {
+      flex-shrink: 0;
+      color: var(--teal);
+    }
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+
+    .download-btn:hover { opacity: 1; }
+
+    /* Section label */
+    .s-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      border-bottom: 2px solid var(--teal);
+      padding-bottom: 5px;
+      margin-bottom: 14px;
+      margin-top: 26px;
+    }
+
+    .s-label:first-of-type { margin-top: 0; }
+
+    .skill-group-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 7px;
+      margin-top: 4px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      font-size: 0.68rem;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      border-radius: 3px;
+      padding: 3px 7px;
+      font-weight: 500;
+    }
+
+    .edu-entry { margin-bottom: 12px; }
+
+    .edu-school {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .edu-degree {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .cert-item {
+      font-size: 0.74rem;
+      color: var(--ink);
+      margin-bottom: 6px;
+      padding-left: 10px;
+      border-left: 2px solid var(--teal);
+    }
+
+    .cert-item strong { display: block; font-weight: 600; }
+    .cert-item span { color: var(--muted); font-size: 0.7rem; }
+
+    /* ══════════════════════════════
+       MAIN COLUMN
+    ══════════════════════════════ */
+    .main {
+      padding: 44px 40px 48px 40px;
+    }
+
+    .section-heading {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      border-bottom: 2px solid var(--teal);
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 32px;
+    }
+
+    .section-heading:first-child { margin-top: 0; }
+
+    /* Job entry */
+    .job { margin-bottom: 26px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .job-dates {
+      font-size: 0.74rem;
+      color: var(--muted);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .job-company {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-top: 2px;
+    }
+
+    .job-location {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .job-summary {
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: var(--ink);
+      margin-bottom: 7px;
+    }
+
+    .job-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job-bullets li {
+      font-size: 0.77rem;
+      line-height: 1.6;
+      color: var(--ink);
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .job-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* Nested sub-bullets */
+    .job-sub-bullets {
+      list-style: none;
+      padding: 0;
+      margin-top: 4px;
+      margin-left: 14px;
+    }
+
+    .job-sub-bullets li {
+      font-size: 0.74rem;
+      line-height: 1.6;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+
+    .job-sub-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 0.55em;
+      width: 4px;
+      height: 4px;
+      border-radius: 0;
+      background: transparent;
+      border: 1.5px solid var(--teal);
+    }
+
+    .job-divider {
+      border: none;
+      border-top: 1px dashed var(--divider);
+      margin: 18px 0;
+    }
+
+    /* Second block within same job */
+    .job-block { margin-top: 12px; }
+
+    /* Print */
+    @media print {
+      @page { size: letter portrait; margin: 0.4in 0.45in; }
+
+      body {
+        background: white;
+        padding: 0;
+        display: block;
+      }
+
+      .resume {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+        /* preserve background colors when printing */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .download-btn { display: none !important; }
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      .resume {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 2px solid var(--divider);
+        padding: 40px 24px 32px;
+      }
+      .main { padding: 28px 24px 40px; }
+      .resume::before {
+        border-width: 70px 70px 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<article class="resume">
+
+  <!-- ═══════════════ CORNER ACCENT ═══════════════ -->
+  <div class="corner-accent" aria-hidden="true">
+    <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Gray (largest, furthest back) -->
+      <polygon points="0,0 78,0 0,78" fill="#C2D4D4"/>
+      <!-- Light teal (middle) -->
+      <polygon points="0,0 64,0 0,64" fill="#5BAEAE"/>
+      <!-- Dark teal (smallest, front — sits in the corner itself) -->
+      <polygon points="0,0 50,0 0,50" fill="#1A7B7B"/>
+    </svg>
+  </div>
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside class="sidebar">
+    <p class="name">Andrew Lea</p>
+    <p class="title-badge">Product Manager</p>
+
+    <ul class="contact-list">
+      <li>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        alea91@gmail.com
+      </li>
+      <li>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        949.290.4793
+      </li>
+      <li>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Portland, OR
+      </li>
+    </ul>
+
+    <button class="download-btn" onclick="window.print()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PDF
+    </button>
+
+    <!-- SKILLS -->
+    <p class="s-label">Skills</p>
+
+    <p class="skill-group-title">Product Management</p>
+    <div class="skill-pills">
+      <span class="pill">Requirements gathering</span>
+      <span class="pill">Technical documentation</span>
+      <span class="pill">Agile development</span>
+      <span class="pill">Data architecture</span>
+      <span class="pill">Expectation setting</span>
+      <span class="pill">Quality testing</span>
+      <span class="pill">Feature prioritization</span>
+    </div>
+
+    <p class="skill-group-title">Tools</p>
+    <div class="skill-pills">
+      <span class="pill">Jira</span>
+      <span class="pill">Figma</span>
+      <span class="pill">Flutter</span>
+      <span class="pill">AWS</span>
+      <span class="pill">Excel</span>
+      <span class="pill">Aha</span>
+      <span class="pill">Miro</span>
+      <span class="pill">SQL</span>
+      <span class="pill">JS / HTML / CSS</span>
+      <span class="pill">Blockchain</span>
+      <span class="pill">Google</span>
+      <span class="pill">Firebase</span>
+      <span class="pill">LucidChart</span>
+    </div>
+
+    <!-- EDUCATION -->
+    <p class="s-label">Education</p>
+
+    <div class="edu-entry">
+      <p class="edu-school">California Polytechnic State University<br>San Luis Obispo</p>
+      <p class="edu-degree">June 2014 — <strong>MBA</strong></p>
+      <p class="edu-degree">June 2013 — <strong>BS Industrial Engineering</strong></p>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <p class="s-label">Certifications</p>
+
+    <div class="cert-item">
+      <strong>Cloud Practitioner</strong>
+      <span>AWS Certified</span>
+    </div>
+    <div class="cert-item">
+      <strong>Product Management</strong>
+      <span>Product Institute</span>
+    </div>
+
+  </aside>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main class="main">
+
+    <p class="section-heading">Work Experience</p>
+
+    <!-- Foureyes -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Technical Product Manager</span>
+        <span class="job-dates">July 2023 – Present</span>
+      </div>
+      <p class="job-company">Foureyes</p>
+      <p class="job-location">Portland, OR</p>
+
+      <div class="job-block">
+        <ul class="job-bullets">
+          <li>Led the development and launch of Connect, a new B2B product that collects automotive behavioral data (website events, phone calls, CRM/DMS integrations) and scrapes national dealership websites to aggregate vehicle inventory and attributes.
+            <ul class="job-sub-bullets">
+              <li>These customers would add $2.172M ARR over the next 12 months, bringing the total to $3.64M</li>
+            </ul>
           </li>
-          <li>
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
-              />
-            </svg>
-            <a href="tel:+19492904793">949.290.4793</a>
-          </li>
-          <li>
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>Portland, OR</span>
-          </li>
-          <li>
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M12 3v12" />
-              <path d="m7 10 5 5 5-5" />
-              <path d="M5 21h14" />
-            </svg>
-            <a href="Andrew Lea Resume.pdf" download="Andrew Lea Resume.pdf">
-              Download PDF
-            </a>
-          </li>
+          <li>Drove the initial customer sale by defining solution scope, creating mockups, and securing commitment pre-build; Connect has since become the company's fastest-growing product segment.</li>
+          <li>Managed complex data collection and integration projects across two engineering teams, including web tracking, CRM/DMS ingestion, and scalable web scraping infrastructure.</li>
+          <li>Collaborated cross-functionally with other PMs and engineering teams to deliver a full-stack product portfolio, from small feature improvements to net-new product launches.</li>
+          <li>Regularly met with C-level leadership to align on team direction, report progress, and surface technical blockers.</li>
+          <li>Conducted customer discovery with prospective partners to gather requirements and inform roadmap decisions.</li>
+          <li>Researched and evaluated new technologies to support product scalability and implementation efficiency.</li>
         </ul>
+      </div>
+    </div>
 
-        <section>
-          <h2 class="s-label">Skills</h2>
+    <hr class="job-divider" />
 
-          <h3 class="skill-group-title">Product Management</h3>
-          <div class="skill-pills">
-            <span class="pill">Requirements gathering</span>
-            <span class="pill">Technical documentation</span>
-            <span class="pill">Agile development</span>
-            <span class="pill">Data architecture</span>
-            <span class="pill">Expectation setting</span>
-            <span class="pill">Quality testing</span>
-            <span class="pill">Feature prioritization</span>
-          </div>
+    <!-- Valltech -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Product Manager</span>
+        <span class="job-dates">March 2022 – July 2023</span>
+      </div>
+      <p class="job-company">Valltech, LLC</p>
+      <p class="job-location">Portland, OR</p>
 
-          <h3 class="skill-group-title">Tools</h3>
-          <div class="skill-pills">
-            <span class="pill">Jira</span>
-            <span class="pill">Figma</span>
-            <span class="pill">Flutter</span>
-            <span class="pill">AWS</span>
-            <span class="pill">Excel</span>
-            <span class="pill">Aha</span>
-            <span class="pill">Miro</span>
-            <span class="pill">SQL</span>
-            <span class="pill">JS / HTML / CSS</span>
-            <span class="pill">Blockchain</span>
-            <span class="pill">Google</span>
-            <span class="pill">Firebase</span>
-            <span class="pill">LucidChart</span>
-          </div>
-        </section>
+      <div class="job-block">
+        <p class="job-summary">Designed and built a B2B application that handles long-term manufacturing contracts and their relationship between sellers, buyers, and brokers.</p>
+        <ul class="job-bullets">
+          <li>Defined the product strategy and guiding principals for the product roadmap</li>
+          <li>Met with key stakeholders to define requirements and refine the application</li>
+          <li>Wrote clear user stories and product specifications for 3 products</li>
+          <li>Prioritized product development to complete highest ROI projects on time</li>
+        </ul>
+      </div>
 
-        <section>
-          <h2 class="s-label">Education</h2>
-          <div class="edu-entry">
-            <h3 class="edu-school">
-              California Polytechnic State University<br />
-              San Luis Obispo
-            </h3>
-            <p class="edu-degree">June 2014 — <strong>MBA</strong></p>
-            <p class="edu-degree">
-              June 2013 — <strong>BS Industrial Engineering</strong>
-            </p>
-          </div>
-        </section>
+      <div class="job-block">
+        <p class="job-summary">Engineered a no-code application that allows users to create and deploy smart contracts on the blockchain network.</p>
+        <ul class="job-bullets">
+          <li>Produced an efficient data model and user interface to work on mobile and web devices</li>
+          <li>Coded the presentation and service layers for the 6 major features</li>
+        </ul>
+      </div>
+    </div>
 
-        <section>
-          <h2 class="s-label">Certifications</h2>
-          <div class="cert-item">
-            <strong>Cloud Practitioner</strong>
-            <span>AWS Certified</span>
-          </div>
-          <div class="cert-item">
-            <strong>Product Management</strong>
-            <span>Product Institute</span>
-          </div>
-        </section>
-      </aside>
+    <hr class="job-divider" />
 
-      <main class="main">
-        <h2 class="section-heading">Work Experience</h2>
+    <!-- Encompass -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Product Manager</span>
+        <span class="job-dates">October 2020 – February 2022</span>
+      </div>
+      <p class="job-company">Encompass Technologies</p>
+      <p class="job-location">Portland, OR</p>
 
-        <section class="job">
-          <header class="job-header">
-            <h3 class="job-title">Technical Product Manager</h3>
-            <p class="job-dates">July 2023 – Present</p>
-          </header>
-          <p class="job-company">Foureyes</p>
-          <p class="job-location">Portland, OR</p>
-          <div class="job-block">
-            <p class="job-summary">
-              Led the development and launch of Connect, a B2B product that
-              collects automotive behavioral data from website events, phone
-              calls, and CRM/DMS integrations, then aggregates vehicle
-              inventory and attributes from dealership websites nationwide.
-            </p>
-            <ul class="job-bullets">
-              <li>
-                Drove the initial customer sale by defining solution scope,
-                creating mockups, and securing a commitment before development;
-                Connect has since become the company's fastest-growing product
-                segment.
-              </li>
-              <li>
-                Built a customer pipeline projected to add $2.17 million in
-                annual recurring revenue over 12 months, bringing total
-                projected ARR to $3.64 million.
-              </li>
-              <li>
-                Managed data collection and integration initiatives across two
-                engineering teams, including web tracking, CRM/DMS ingestion,
-                and scalable web scraping infrastructure.
-              </li>
-              <li>
-                Collaborated across product and engineering teams to deliver a
-                full-stack product portfolio, from targeted improvements to
-                net-new product launches.
-              </li>
-              <li>
-                Met regularly with C-level leadership to align team direction,
-                report progress, and surface technical blockers.
-              </li>
-              <li>
-                Conducted customer discovery and evaluated new technologies to
-                guide roadmap, scalability, and implementation decisions.
-              </li>
-            </ul>
-          </div>
-        </section>
+      <div class="job-block">
+        <p class="job-summary">Launched a beverage manufacturing web app and production mobile app.</p>
+        <ul class="job-bullets">
+          <li>Defined the data requirements and user experience for a team of 5 developers to build</li>
+          <li>Prioritized engineering tasks using the Kanban framework</li>
+          <li>Worked with 6 alpha and 3 current customers to maintain a product roadmap and release the new product in 12 months</li>
+          <li>Addressed customer pain points with the CEO and VP of Tech to refine and execute strategy</li>
+          <li>Communicated customer-facing release notes bi-weekly</li>
+          <li>Supported sales and internal services in adopting the new product</li>
+        </ul>
+      </div>
+    </div>
 
-        <hr class="job-divider" />
+    <hr class="job-divider" />
 
-        <section class="job">
-          <header class="job-header">
-            <h3 class="job-title">Product Manager</h3>
-            <p class="job-dates">March 2022 – July 2023</p>
-          </header>
-          <p class="job-company">Valltech, LLC</p>
-          <p class="job-location">Portland, OR</p>
-          <div class="job-block">
-            <p class="job-summary">
-              Designed and built a B2B application that handles long-term
-              manufacturing contracts and relationships between sellers,
-              buyers, and brokers.
-            </p>
-            <ul class="job-bullets">
-              <li>
-                Defined the product strategy and guiding principles for the
-                product roadmap.
-              </li>
-              <li>
-                Met with key stakeholders to define requirements and refine the
-                application.
-              </li>
-              <li>
-                Wrote clear user stories and product specifications for three
-                products.
-              </li>
-              <li>
-                Prioritized development to complete the highest-ROI projects on
-                time.
-              </li>
-            </ul>
-          </div>
-          <div class="job-block">
-            <p class="job-summary">
-              Engineered a no-code application that allows users to create and
-              deploy smart contracts on the blockchain network.
-            </p>
-            <ul class="job-bullets">
-              <li>
-                Produced an efficient data model and interface for mobile and
-                web devices.
-              </li>
-              <li>
-                Coded the presentation and service layers for six major
-                features.
-              </li>
-            </ul>
-          </div>
-        </section>
+    <!-- Orchestra -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Advisory Consultant</span>
+        <span class="job-dates">October 2016 – September 2020</span>
+      </div>
+      <p class="job-company">Orchestra Software</p>
+      <p class="job-location">Portland, OR</p>
 
-        <hr class="job-divider" />
+      <div class="job-block">
+        <p class="job-summary">Managed 30 cross-functional projects centered around SAP B1 for medium-sized breweries, distilleries, and other craft beverage manufacturers.</p>
+        <ul class="job-bullets">
+          <li>Led the rollout of a new, high-value product offering called Large Enterprise</li>
+          <li>Automated business processes with software integrations including a WMS system, a data warehouse, and an EDI solution</li>
+          <li>Managed the successful implementation of 12 customers including data migration, training, and support</li>
+          <li>Awarded the Core Value Award for Excellence in Teamwork in 2017</li>
+        </ul>
+      </div>
+    </div>
 
-        <section class="job">
-          <header class="job-header">
-            <h3 class="job-title">Product Manager</h3>
-            <p class="job-dates">October 2020 – February 2022</p>
-          </header>
-          <p class="job-company">Encompass Technologies</p>
-          <p class="job-location">Portland, OR</p>
-          <div class="job-block">
-            <p class="job-summary">
-              Launched a beverage manufacturing web application and production
-              mobile application.
-            </p>
-            <ul class="job-bullets">
-              <li>
-                Defined data requirements and user experience for a team of
-                five developers.
-              </li>
-              <li>
-                Prioritized engineering tasks using the Kanban framework.
-              </li>
-              <li>
-                Worked with six alpha and three existing customers to maintain
-                a roadmap and release the product in 12 months.
-              </li>
-              <li>
-                Addressed customer pain points with the CEO and VP of
-                Technology to refine and execute strategy.
-              </li>
-              <li>Communicated customer-facing release notes biweekly.</li>
-              <li>
-                Supported sales and internal services in adopting the product.
-              </li>
-            </ul>
-          </div>
-        </section>
+    <hr class="job-divider" />
 
-        <hr class="job-divider" />
+    <!-- RSM -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Application Developer</span>
+        <span class="job-dates">July 2014 – September 2016</span>
+      </div>
+      <p class="job-company">RSM US LLP</p>
+      <p class="job-location">Pleasanton, CA</p>
 
-        <section class="job">
-          <header class="job-header">
-            <h3 class="job-title">Advisory Consultant</h3>
-            <p class="job-dates">October 2016 – September 2020</p>
-          </header>
-          <p class="job-company">Orchestra Software</p>
-          <p class="job-location">Portland, OR</p>
-          <div class="job-block">
-            <p class="job-summary">
-              Managed 30 cross-functional projects centered on SAP Business One
-              for medium-sized breweries, distilleries, and other craft beverage
-              manufacturers.
-            </p>
-            <ul class="job-bullets">
-              <li>
-                Led the rollout of a new, high-value product offering called
-                Large Enterprise.
-              </li>
-              <li>
-                Automated business processes through integrations with a WMS,
-                data warehouse, and EDI solution.
-              </li>
-              <li>
-                Managed 12 successful customer implementations, including data
-                migration, training, and support.
-              </li>
-              <li>
-                Received the Core Value Award for Excellence in Teamwork in
-                2017.
-              </li>
-            </ul>
-          </div>
-        </section>
+      <div class="job-block">
+        <p class="job-summary">Developed classes, data tables, methods, and forms in Microsoft Dynamics AX.</p>
+        <ul class="job-bullets">
+          <li>Released 3 feature applications including a sales prorating workbench and an inventory management dashboard to increase user efficiency</li>
+          <li>Wrote and tested 50 reports with SQL and SSRS to analyze inventory, operations, and financials</li>
+        </ul>
+      </div>
+    </div>
 
-        <hr class="job-divider" />
-
-        <section class="job">
-          <header class="job-header">
-            <h3 class="job-title">Application Developer</h3>
-            <p class="job-dates">July 2014 – September 2016</p>
-          </header>
-          <p class="job-company">RSM US LLP</p>
-          <p class="job-location">Pleasanton, CA</p>
-          <div class="job-block">
-            <p class="job-summary">
-              Developed classes, data tables, methods, and forms in Microsoft
-              Dynamics AX.
-            </p>
-            <ul class="job-bullets">
-              <li>
-                Released three feature applications, including a sales
-                prorating workbench and inventory management dashboard.
-              </li>
-              <li>
-                Wrote and tested 50 SQL and SSRS reports covering inventory,
-                operations, and financials.
-              </li>
-            </ul>
-          </div>
-        </section>
-      </main>
-    </article>
-  </body>
+  </main>
+</article>
+</body>
 </html>
