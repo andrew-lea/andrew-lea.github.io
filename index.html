@@ -8,98 +8,174 @@
       content="Andrew Lea is a technical product manager in Portland, Oregon with experience launching B2B software and data products."
     />
     <meta name="author" content="Andrew Lea" />
-    <title>Andrew Lea | Technical Product Manager</title>
+    <title>Andrew Lea – Technical Product Manager</title>
     <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <main class="resume">
+    <article class="resume">
       <aside class="sidebar">
-        <header class="identity">
-          <h1>Andrew Lea</h1>
-          <p>Technical Product Manager</p>
-        </header>
+        <h1 class="name">Andrew Lea</h1>
+        <p class="title-badge">Technical Product Manager</p>
 
-        <address class="contact">
-          <a href="mailto:alea91@gmail.com">alea91@gmail.com</a>
-          <a href="tel:+19492904793">949.290.4793</a>
-          <span>Portland, OR</span>
-        </address>
-
-        <a
-          class="download-link"
-          href="Andrew Lea Resume.pdf"
-          download="Andrew Lea Resume.pdf"
-        >
-          Download PDF resume
-        </a>
+        <ul class="contact-list">
+          <li>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <a href="mailto:alea91@gmail.com">alea91@gmail.com</a>
+          </li>
+          <li>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            <a href="tel:+19492904793">949.290.4793</a>
+          </li>
+          <li>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Portland, OR</span>
+          </li>
+          <li>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3v12" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M5 21h14" />
+            </svg>
+            <a href="Andrew Lea Resume.pdf" download="Andrew Lea Resume.pdf">
+              Download PDF
+            </a>
+          </li>
+        </ul>
 
         <section>
-          <h2>Skills</h2>
+          <h2 class="s-label">Skills</h2>
 
-          <h3>Product Management</h3>
-          <ul class="plain-list">
-            <li>Requirements gathering</li>
-            <li>Technical documentation</li>
-            <li>Agile development</li>
-            <li>Data architecture</li>
-            <li>Expectation setting</li>
-            <li>Quality testing</li>
-            <li>Feature prioritization</li>
-          </ul>
+          <h3 class="skill-group-title">Product Management</h3>
+          <div class="skill-pills">
+            <span class="pill">Requirements gathering</span>
+            <span class="pill">Technical documentation</span>
+            <span class="pill">Agile development</span>
+            <span class="pill">Data architecture</span>
+            <span class="pill">Expectation setting</span>
+            <span class="pill">Quality testing</span>
+            <span class="pill">Feature prioritization</span>
+          </div>
 
-          <h3>Tools</h3>
-          <ul class="plain-list">
-            <li>Jira</li>
-            <li>Figma</li>
-            <li>Flutter</li>
-            <li>AWS</li>
-            <li>Excel</li>
-            <li>Aha</li>
-            <li>Miro</li>
-            <li>SQL</li>
-            <li>JavaScript / HTML / CSS</li>
-            <li>Blockchain</li>
-            <li>Google</li>
-            <li>Firebase</li>
-            <li>Lucidchart</li>
-          </ul>
+          <h3 class="skill-group-title">Tools</h3>
+          <div class="skill-pills">
+            <span class="pill">Jira</span>
+            <span class="pill">Figma</span>
+            <span class="pill">Flutter</span>
+            <span class="pill">AWS</span>
+            <span class="pill">Excel</span>
+            <span class="pill">Aha</span>
+            <span class="pill">Miro</span>
+            <span class="pill">SQL</span>
+            <span class="pill">JS / HTML / CSS</span>
+            <span class="pill">Blockchain</span>
+            <span class="pill">Google</span>
+            <span class="pill">Firebase</span>
+            <span class="pill">LucidChart</span>
+          </div>
         </section>
 
         <section>
-          <h2>Education</h2>
-          <h3>California Polytechnic State University, San Luis Obispo</h3>
-          <p>June 2014 — <strong>MBA</strong></p>
-          <p>June 2013 — <strong>BS Industrial Engineering</strong></p>
+          <h2 class="s-label">Education</h2>
+          <div class="edu-entry">
+            <h3 class="edu-school">
+              California Polytechnic State University<br />
+              San Luis Obispo
+            </h3>
+            <p class="edu-degree">June 2014 — <strong>MBA</strong></p>
+            <p class="edu-degree">
+              June 2013 — <strong>BS Industrial Engineering</strong>
+            </p>
+          </div>
         </section>
 
         <section>
-          <h2>Certifications</h2>
-          <p>AWS Certified: <strong>Cloud Practitioner</strong></p>
-          <p>Product Institute: <strong>Product Management</strong></p>
+          <h2 class="s-label">Certifications</h2>
+          <div class="cert-item">
+            <strong>Cloud Practitioner</strong>
+            <span>AWS Certified</span>
+          </div>
+          <div class="cert-item">
+            <strong>Product Management</strong>
+            <span>Product Institute</span>
+          </div>
         </section>
       </aside>
 
-      <div class="main-column">
-        <section class="experience">
-          <h2>Work Experience</h2>
+      <main class="main">
+        <h2 class="section-heading">Work Experience</h2>
 
-          <article class="role">
-            <header>
-              <div>
-                <h3>Technical Product Manager</h3>
-                <p class="company">Foureyes</p>
-                <p class="location">Portland, OR</p>
-              </div>
-              <p class="dates">July 2023 – Present</p>
-            </header>
-            <p>
+        <section class="job">
+          <header class="job-header">
+            <h3 class="job-title">Technical Product Manager</h3>
+            <p class="job-dates">July 2023 – Present</p>
+          </header>
+          <p class="job-company">Foureyes</p>
+          <p class="job-location">Portland, OR</p>
+          <div class="job-block">
+            <p class="job-summary">
               Led the development and launch of Connect, a B2B product that
               collects automotive behavioral data from website events, phone
               calls, and CRM/DMS integrations, then aggregates vehicle
               inventory and attributes from dealership websites nationwide.
             </p>
-            <ul>
+            <ul class="job-bullets">
               <li>
                 Drove the initial customer sale by defining solution scope,
                 creating mockups, and securing a commitment before development;
@@ -130,23 +206,25 @@
                 guide roadmap, scalability, and implementation decisions.
               </li>
             </ul>
-          </article>
+          </div>
+        </section>
 
-          <article class="role">
-            <header>
-              <div>
-                <h3>Product Manager</h3>
-                <p class="company">Valltech, LLC</p>
-                <p class="location">Portland, OR</p>
-              </div>
-              <p class="dates">March 2022 – July 2023</p>
-            </header>
-            <p>
+        <hr class="job-divider" />
+
+        <section class="job">
+          <header class="job-header">
+            <h3 class="job-title">Product Manager</h3>
+            <p class="job-dates">March 2022 – July 2023</p>
+          </header>
+          <p class="job-company">Valltech, LLC</p>
+          <p class="job-location">Portland, OR</p>
+          <div class="job-block">
+            <p class="job-summary">
               Designed and built a B2B application that handles long-term
               manufacturing contracts and relationships between sellers,
               buyers, and brokers.
             </p>
-            <ul>
+            <ul class="job-bullets">
               <li>
                 Defined the product strategy and guiding principles for the
                 product roadmap.
@@ -164,11 +242,13 @@
                 time.
               </li>
             </ul>
-            <p>
+          </div>
+          <div class="job-block">
+            <p class="job-summary">
               Engineered a no-code application that allows users to create and
               deploy smart contracts on the blockchain network.
             </p>
-            <ul>
+            <ul class="job-bullets">
               <li>
                 Produced an efficient data model and interface for mobile and
                 web devices.
@@ -178,22 +258,24 @@
                 features.
               </li>
             </ul>
-          </article>
+          </div>
+        </section>
 
-          <article class="role">
-            <header>
-              <div>
-                <h3>Product Manager</h3>
-                <p class="company">Encompass Technologies</p>
-                <p class="location">Portland, OR</p>
-              </div>
-              <p class="dates">October 2020 – February 2022</p>
-            </header>
-            <p>
+        <hr class="job-divider" />
+
+        <section class="job">
+          <header class="job-header">
+            <h3 class="job-title">Product Manager</h3>
+            <p class="job-dates">October 2020 – February 2022</p>
+          </header>
+          <p class="job-company">Encompass Technologies</p>
+          <p class="job-location">Portland, OR</p>
+          <div class="job-block">
+            <p class="job-summary">
               Launched a beverage manufacturing web application and production
               mobile application.
             </p>
-            <ul>
+            <ul class="job-bullets">
               <li>
                 Defined data requirements and user experience for a team of
                 five developers.
@@ -214,23 +296,25 @@
                 Supported sales and internal services in adopting the product.
               </li>
             </ul>
-          </article>
+          </div>
+        </section>
 
-          <article class="role">
-            <header>
-              <div>
-                <h3>Advisory Consultant</h3>
-                <p class="company">Orchestra Software</p>
-                <p class="location">Portland, OR</p>
-              </div>
-              <p class="dates">October 2016 – September 2020</p>
-            </header>
-            <p>
+        <hr class="job-divider" />
+
+        <section class="job">
+          <header class="job-header">
+            <h3 class="job-title">Advisory Consultant</h3>
+            <p class="job-dates">October 2016 – September 2020</p>
+          </header>
+          <p class="job-company">Orchestra Software</p>
+          <p class="job-location">Portland, OR</p>
+          <div class="job-block">
+            <p class="job-summary">
               Managed 30 cross-functional projects centered on SAP Business One
               for medium-sized breweries, distilleries, and other craft beverage
               manufacturers.
             </p>
-            <ul>
+            <ul class="job-bullets">
               <li>
                 Led the rollout of a new, high-value product offering called
                 Large Enterprise.
@@ -248,22 +332,24 @@
                 2017.
               </li>
             </ul>
-          </article>
+          </div>
+        </section>
 
-          <article class="role">
-            <header>
-              <div>
-                <h3>Application Developer</h3>
-                <p class="company">RSM US LLP</p>
-                <p class="location">Pleasanton, CA</p>
-              </div>
-              <p class="dates">July 2014 – September 2016</p>
-            </header>
-            <p>
+        <hr class="job-divider" />
+
+        <section class="job">
+          <header class="job-header">
+            <h3 class="job-title">Application Developer</h3>
+            <p class="job-dates">July 2014 – September 2016</p>
+          </header>
+          <p class="job-company">RSM US LLP</p>
+          <p class="job-location">Pleasanton, CA</p>
+          <div class="job-block">
+            <p class="job-summary">
               Developed classes, data tables, methods, and forms in Microsoft
               Dynamics AX.
             </p>
-            <ul>
+            <ul class="job-bullets">
               <li>
                 Released three feature applications, including a sales
                 prorating workbench and inventory management dashboard.
@@ -273,9 +359,9 @@
                 operations, and financials.
               </li>
             </ul>
-          </article>
+          </div>
         </section>
-      </div>
-    </main>
+      </main>
+    </article>
   </body>
 </html>
